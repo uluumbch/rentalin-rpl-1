@@ -11,6 +11,8 @@ class LandingPageController extends Controller
 
     public function kendaraan()
     {
-        return view('kendaraan');
+        return view('kendaraan', [
+            'jumlah' => 4
+        ]);
     }
 }

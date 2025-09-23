@@ -8,7 +8,7 @@
         </div>
 
         <div class="grid grid-cols-3 gap-3">
-            @for ($i = 0; $i < 6; $i++)
+            @for ($i = 0; $i < $jumlah; $i++)
                 <div class="shadow-md">
                     <img src="{{ asset('gambar/honda-brio.png') }}" class="h-52 w-2/3 object-cover mx-auto" />
                     <div class="p-4">
