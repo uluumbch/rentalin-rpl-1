@@ -36,8 +36,8 @@
             <nav>
                 <ul class="flex flex-col space-y-2">
                     <li>
-                        <a href=""
-                            class="flex items-center p-3 rounded-lg @if(request()->routeIs('admin.dashboard')) bg-white text-primary font-semibold @else hover:bg-primary-darker transition duration-200 @endif">
+                        <a href="{{ route('admin.dashboard') }}"
+                            class="flex items-center p-3 rounded-lg @if(request()->routeIs('admin.dashboard')) bg-white text-black font-semibold @else hover:bg-purple-700 transition duration-200 @endif">
                             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

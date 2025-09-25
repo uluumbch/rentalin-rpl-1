@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingPageController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'home']);
 
@@ -16,4 +15,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin', [AdminController::class, 'admin'])->middleware('auth');
+Route::get('/admin', [AdminController::class, 'admin'])
+    ->middleware('auth')
+    ->name('admin.dashboard');
