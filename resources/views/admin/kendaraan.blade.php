@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <main class="flex-1 p-6">
-        <a href="" class="bg-purple-800 text-white px-2 py-1 mb-2 rounded inline-block">
+        <a href="{{ route('admin.kendaraan.create') }}" class="bg-purple-800 text-white px-2 py-1 mb-2 rounded inline-block">
             Tambah Kendaraan
         </a>
 
@@ -22,25 +22,30 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($kendaraan as $item)
                 <tr class="text-center">
                     <td>
-                        <img src="#" />
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->name }}" class="w-20 mx-auto" />
                     </td>
                     <td>
-                        Kijang Innova
+                        {{ $item->name }}
                     </td>
                     <td>
-                        200000
+                        {{ $item->harga }}
                     </td>
-                    <td class="flex gap-1">
-                        <a href="" class="bg-purple-800 px-3 py-2 text-white mt-2">
+                    <td class="flex gap-1 justify-center">
+                        <a href="{{ route('admin.kendaraan.edit', $item->id) }}" class="bg-purple-800 px-3 py-2 text-white mt-2">
                             Edit
                         </a>
-                        <a href="" class="bg-red-800 px-3 py-2 text-white mt-2">
-                            Hapus
-                        </a>
+                        <form action="{{ route('admin.kendaraan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="bg-red-800 px-3 py-2 text-white mt-2">
+                                Hapus
+                            </button>
+                        </form>
                     </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </main>

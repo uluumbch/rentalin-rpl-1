@@ -23,3 +23,23 @@ Route::get('/admin', [AdminController::class, 'admin'])
 Route::get('/admin/kendaraan', [KendaraanController::class, 'index'])
     ->middleware('auth')
     ->name('admin.kendaraan.index');
+
+Route::get('/admin/kendaraan/create', [KendaraanController::class, 'create'])
+    ->middleware('auth')
+    ->name('admin.kendaraan.create');
+
+Route::post('/admin/kendaraan', [KendaraanController::class, 'store'])
+    ->middleware('auth')
+    ->name('admin.kendaraan.store');
+
+Route::get('/admin/kendaraan/{id}/edit', [KendaraanController::class, 'edit'])
+    ->middleware('auth')
+    ->name('admin.kendaraan.edit');
+
+Route::put('/admin/kendaraan/{id}', [KendaraanController::class, 'update'])
+    ->middleware('auth')
+    ->name('admin.kendaraan.update');
+
+Route::delete('/admin/kendaraan/{id}', [KendaraanController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('admin.kendaraan.destroy');
