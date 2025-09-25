@@ -14,4 +14,6 @@ Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/admin', [AdminController::class, 'admin'])->middleware('auth');

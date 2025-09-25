@@ -93,7 +93,7 @@
                         </a>
                     </li>
                     <li>
-                        <form action="" method="POST" 
+                        <form action="{{ route('logout') }}" method="POST" 
                             class="flex items-center p-3 rounded-lg hover:bg-[#4d2fbc] transition duration-200 ">
                             @csrf
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
