@@ -24,7 +24,7 @@
                 Jumlah Admin
             </p>
             <p class="text-3xl font-bold">
-                6
+                {{ $jumlah_admin }}
             </p>
         </div>
 
