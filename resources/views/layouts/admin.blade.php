@@ -48,8 +48,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href=""
-                            class="flex items-center p-3 rounded-lg @if(request()->routeIs('admin.vehicle')) bg-white text-primary font-semibold @else hover:bg-primary-darker transition duration-200 @endif">
+                        <a href="{{ route('admin.kendaraan.index') }}"
+                            class="flex items-center p-3 rounded-lg @if(request()->routeIs('admin.kendaraan*')) bg-white text-black font-semibold @else hover:bg-purple-700 transition duration-200 @endif">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-6 h-6 mr-3">
@@ -58,7 +58,7 @@
                                 <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                                 <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
                             </svg>
-                            <span>Vehicles</span>
+                            <span>Kendaraan</span>
                         </a>
                     </li>
                     <li>

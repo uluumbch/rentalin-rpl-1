@@ -1,0 +1,22 @@
+@extends('layouts.admin')
+@section('content')
+<main class="flex-1 p-6">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Gambar
+                </th>
+                <th>
+                    Nama
+                </th>
+                <th>
+                    Harga
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+    </table>
+</main>
+@endsection
