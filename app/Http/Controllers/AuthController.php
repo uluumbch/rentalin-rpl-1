@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -16,6 +17,19 @@ class AuthController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        dd($email, $password);
+        $login = Auth::attempt([
+            'email' => $email,
+            'password' => $password,
+        ]);
+
+        if ($login == true) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/admin');
+        } else {
+            return back()->withErrors([
+                'login' => 'Maaf, email atau password salah',
+            ]);
+        }
     }
 }
